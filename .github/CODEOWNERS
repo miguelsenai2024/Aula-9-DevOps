@@ -1,0 +1,8 @@
+# Conta real com acesso de escrita. Outro colaborador será necessário para
+# aprovar PRs cujo autor seja esta mesma conta; autoaprovação não é permitida.
+* @miguelsenai2024
+/apps/portal/ @miguelsenai2024
+/apps/api/ @miguelsenai2024
+/libs/ui/ @miguelsenai2024
+/prompts/ @miguelsenai2024
+/.github/ @miguelsenai2024

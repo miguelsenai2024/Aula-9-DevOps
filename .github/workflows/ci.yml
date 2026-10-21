@@ -1,0 +1,78 @@
+name: CI
+on:
+  pull_request:
+  merge_group:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  changes:
+    runs-on: ubuntu-latest
+    outputs:
+      code: ${{ steps.paths.outputs.code }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          persist-credentials: false
+      - uses: dorny/paths-filter@v3
+        id: paths
+        with:
+          token: ''
+          base: ${{ github.event_name == 'pull_request' && github.event.pull_request.base.sha || 'main' }}
+          ref: ${{ github.sha }}
+          filters: |
+            code:
+              - 'apps/**'
+              - 'libs/**'
+              - 'tests/**'
+              - 'scripts/**'
+              - 'package*.json'
+              - '.github/workflows/**'
+  test:
+    name: test (${{ matrix.area }})
+    needs: changes
+    if: needs.changes.outputs.code == 'true' || github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        area: [api, portal]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          persist-credentials: false
+          sparse-checkout: |
+            apps/${{ matrix.area }}
+            apps/api
+            libs/ui
+            tests
+            scripts
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm run lint && node --test tests/${{ matrix.area }}.test.js
+  secrets:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  gate:
+    if: always()
+    needs: [changes, test, secrets]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Validar resultados obrigatórios
+        env:
+          CHANGES: ${{ needs.changes.result }}
+          TEST: ${{ needs.test.result }}
+          SECRETS: ${{ needs.secrets.result }}
+        run: |
+          test "$CHANGES" = success
+          test "$SECRETS" = success
+          test "$TEST" = success || test "$TEST" = skipped

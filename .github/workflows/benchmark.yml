@@ -1,0 +1,63 @@
+name: Checkout benchmark
+on:
+  pull_request:
+  merge_group:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  sample:
+    name: ${{ matrix.mode }} / amostra ${{ matrix.sample }}
+    runs-on: ubuntu-latest
+    strategy:
+      max-parallel: 2
+      matrix:
+        mode: [baseline, otimizado]
+        sample: [1, 2, 3]
+    steps:
+      - name: Início
+        run: |
+          echo "START_NS=$(date +%s%N)" >> "$GITHUB_ENV"
+          echo "JOB_START_NS=$(date +%s%N)" >> "$GITHUB_ENV"
+      - name: Checkout baseline
+        if: matrix.mode == 'baseline'
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Checkout otimizado
+        if: matrix.mode == 'otimizado'
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          persist-credentials: false
+          sparse-checkout: |
+            apps/api
+            libs/ui
+            tests
+            scripts
+            apps/portal
+      - name: Registrar checkout
+        env:
+          MODE: ${{ matrix.mode }}
+          SAMPLE: ${{ matrix.sample }}
+        run: |
+          END_NS=$(date +%s%N)
+          MS=$(( (END_NS - START_NS) / 1000000 ))
+          mkdir -p evidence-result
+          echo 'mode,sample,checkout_ms,commit,run' > evidence-result/checkout.csv
+          echo "$MODE,$SAMPLE,$MS,$GITHUB_SHA,$GITHUB_RUN_ID" >> evidence-result/checkout.csv
+          cat evidence-result/checkout.csv >> "$GITHUB_STEP_SUMMARY"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm run check
+      - name: Duração da carga útil
+        run: |
+          echo "payload_ms=$(( ($(date +%s%N) - JOB_START_NS) / 1000000 ))" > evidence-result/payload.txt
+          cat evidence-result/payload.txt >> "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: checkout-${{ matrix.mode }}-${{ matrix.sample }}
+          path: evidence-result/
+          retention-days: 30
