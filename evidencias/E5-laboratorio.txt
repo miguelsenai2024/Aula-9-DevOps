@@ -1,0 +1,276 @@
+Laboratório real executado em 2026-10-21T21:20:59.429Z
+Repositório local isolado, sem remoto; main abaixo é somente a main do laboratório.
+
+$ git init -b main
+Initialized empty Git repository in C:/Users/Administrator/Documents/Codex/2026-10-21/es/work/Aula-9-DevOps/work/git-lab/.git/
+exit=0
+
+$ git config user.name Carparts Laboratorio
+exit=0
+
+$ git config user.email lab@example.invalid
+exit=0
+
+$ git config core.autocrlf false
+exit=0
+
+$ git add .
+exit=0
+
+$ git commit -m chore(lab): criar base
+[main (root-commit) 07d1ab9] chore(lab): criar base
+ 1 file changed, 1 insertion(+)
+ create mode 100644 politica.txt
+exit=0
+
+$ git switch -c feat/prazo
+Switched to a new branch 'feat/prazo'
+exit=0
+
+$ git commit -am feat(lab): reduzir prazo
+[feat/prazo aacebcc] feat(lab): reduzir prazo
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+exit=0
+
+$ git switch main
+Switched to branch 'main'
+exit=0
+
+$ git commit -am fix(lab): ajustar prazo no tronco
+[main 25fda94] fix(lab): ajustar prazo no tronco
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+exit=0
+
+$ git switch feat/prazo
+Switched to branch 'feat/prazo'
+exit=0
+
+CENÁRIO 1: alterações concorrentes na mesma linha; o conflito é esperado.
+
+$ git rebase main
+Auto-merging politica.txt
+CONFLICT (content): Merge conflict in politica.txt
+Rebasing (1/1)error: could not apply aacebcc... feat(lab): reduzir prazo
+hint: Resolve all conflicts manually, mark them as resolved with
+hint: "git add/rm <conflicted_files>", then run "git rebase --continue".
+hint: You can instead skip this commit: run "git rebase --skip".
+hint: To abort and get back to the state before "git rebase", run "git rebase --abort".
+hint: Disable this message with "git config set advice.mergeConflict false"
+Could not apply aacebcc... # feat(lab): reduzir prazo
+exit=1
+
+$ git add politica.txt
+exit=0
+
+$ git rebase --continue
+[detached HEAD 7d2d449] feat(lab): reduzir prazo
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Successfully rebased and updated refs/heads/feat/prazo.
+exit=0
+
+$ git diff main -- politica.txt
+diff --git a/politica.txt b/politica.txt
+index 4f2ffb9..9fe9be2 100644
+--- a/politica.txt
++++ b/politica.txt
+@@ -1 +1 @@
+-prazo=3
++prazo=2
+exit=0
+
+$ git switch main
+Switched to branch 'main'
+exit=0
+
+$ git merge --ff-only feat/prazo
+Updating 25fda94..7d2d449
+Fast-forward
+ politica.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+exit=0
+
+CENÁRIO 2: revert cria novo commit e preserva o commit revertido. Nenhum push é executado.
+
+$ git rev-parse HEAD
+7d2d4498b7c08583017b9926d491667b0259efdd
+exit=0
+
+$ git revert --no-edit 7d2d4498b7c08583017b9926d491667b0259efdd
+[main 4e3da02] Revert "feat(lab): reduzir prazo"
+ Date: Wed Oct 21 18:21:01 2026 -0300
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+exit=0
+
+$ git log -3 --oneline
+4e3da02 Revert "feat(lab): reduzir prazo"
+7d2d449 feat(lab): reduzir prazo
+25fda94 fix(lab): ajustar prazo no tronco
+exit=0
+
+$ git show HEAD:politica.txt
+prazo=3
+exit=0
+
+CENÁRIO 3: teste automático encontra uma regressão inserida de propósito.
+
+$ git switch -c lab/bisect
+Switched to a new branch 'lab/bisect'
+exit=0
+
+$ git add .
+exit=0
+
+$ git commit -m test(lab): estabelecer revisão boa
+[lab/bisect 2bb0c12] test(lab): estabelecer revisão boa
+ 2 files changed, 3 insertions(+)
+ create mode 100644 calc.cjs
+ create mode 100644 test.cjs
+exit=0
+
+$ git rev-parse HEAD
+2bb0c12fb95da06346f877ed4ad9663902b4a0f2
+exit=0
+
+$ git add .
+exit=0
+
+$ git commit -m docs(lab): etapa 1
+[lab/bisect 4af81c5] docs(lab): etapa 1
+ 1 file changed, 1 insertion(+)
+ create mode 100644 notas.txt
+exit=0
+
+$ git add .
+exit=0
+
+$ git commit -m docs(lab): etapa 2
+[lab/bisect 211cee5] docs(lab): etapa 2
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+exit=0
+
+$ git add .
+exit=0
+
+$ git commit -m fix(lab): inserir regressão didática proposital
+[lab/bisect 7d2ca3a] fix(lab): inserir regressão didática proposital
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+exit=0
+
+$ git rev-parse HEAD
+7d2ca3afb1b3b422c612ba7635446b58082770bc
+exit=0
+
+$ git add .
+exit=0
+
+$ git commit -m docs(lab): etapa 4
+[lab/bisect ab46e16] docs(lab): etapa 4
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+exit=0
+
+$ git add .
+exit=0
+
+$ git commit -m docs(lab): etapa 5
+[lab/bisect 67a97c1] docs(lab): etapa 5
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+exit=0
+
+$ git bisect start HEAD 2bb0c12fb95da06346f877ed4ad9663902b4a0f2
+Bisecting: 2 revisions left to test after this (roughly 1 step)
+[211cee58b1d86238ed26b30c70b88bfffb7b41c1] docs(lab): etapa 2
+exit=0
+
+$ git bisect run node test.cjs
+running 'node' 'test.cjs'
+Bisecting: 0 revisions left to test after this (roughly 1 step)
+[ab46e161b0eebf4ad71f12a0b1f3dbffaf97c920] docs(lab): etapa 4
+running 'node' 'test.cjs'
+Bisecting: 0 revisions left to test after this (roughly 0 steps)
+[7d2ca3afb1b3b422c612ba7635446b58082770bc] fix(lab): inserir regressão didática proposital
+running 'node' 'test.cjs'
+7d2ca3afb1b3b422c612ba7635446b58082770bc is the first 'bad' commit
+commit 7d2ca3afb1b3b422c612ba7635446b58082770bc
+Author: Carparts Laboratorio <lab@example.invalid>
+Date:   Wed Oct 21 18:21:02 2026 -0300
+
+    fix(lab): inserir regressão didática proposital
+
+ calc.cjs  | 2 +-
+ notas.txt | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+bisect found first 'bad' commit
+node:assert:152
+  throw new AssertionError(obj);
+  ^
+
+AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+13 !== 30
+
+    at Object.<anonymous> (C:\Users\Administrator\Documents\Codex\2026-10-21\es\work\Aula-9-DevOps\work\git-lab\test.cjs:2:8)
+    at Module._compile (node:internal/modules/cjs/loader:1872:14)
+    at Object..js (node:internal/modules/cjs/loader:2003:10)
+    at Module.load (node:internal/modules/cjs/loader:1594:32)
+    at Module._load (node:internal/modules/cjs/loader:1396:12)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)
+    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)
+    at node:internal/main/run_main_module:33:47 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: 13,
+  expected: 30,
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.19.0
+node:assert:152
+  throw new AssertionError(obj);
+  ^
+
+AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+13 !== 30
+
+    at Object.<anonymous> (C:\Users\Administrator\Documents\Codex\2026-10-21\es\work\Aula-9-DevOps\work\git-lab\test.cjs:2:8)
+    at Module._compile (node:internal/modules/cjs/loader:1872:14)
+    at Object..js (node:internal/modules/cjs/loader:2003:10)
+    at Module.load (node:internal/modules/cjs/loader:1594:32)
+    at Module._load (node:internal/modules/cjs/loader:1396:12)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)
+    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)
+    at node:internal/main/run_main_module:33:47 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: 13,
+  expected: 30,
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.19.0
+exit=0
+
+$ git rev-parse refs/bisect/bad
+7d2ca3afb1b3b422c612ba7635446b58082770bc
+exit=0
+VALIDADO: primeiro commit ruim 7d2ca3afb1b3b422c612ba7635446b58082770bc; igual ao bug inserido 7d2ca3afb1b3b422c612ba7635446b58082770bc.
+
+$ git bisect reset
+Previous HEAD position was 7d2ca3a fix(lab): inserir regressão didática proposital
+Switched to branch 'lab/bisect'
+exit=0
+
+$ git log --all --graph --oneline
+* 67a97c1 docs(lab): etapa 5
+* ab46e16 docs(lab): etapa 4
+* 7d2ca3a fix(lab): inserir regressão didática proposital
+* 211cee5 docs(lab): etapa 2
+* 4af81c5 docs(lab): etapa 1
+* 2bb0c12 test(lab): estabelecer revisão boa
+* 4e3da02 Revert "feat(lab): reduzir prazo"
+* 7d2d449 feat(lab): reduzir prazo
+* 25fda94 fix(lab): ajustar prazo no tronco
+* 07d1ab9 chore(lab): criar base
+exit=0

@@ -1,0 +1,37 @@
+E1 — coleta em 2026-10-21T21:24:09.820Z
+Repositório didático criado hoje. Não é o monorepo real da Carparts.
+
+BASELINE: clone isolado, somente main inicial, antes da implementação ser integrada.
+$ git count-objects -vH
+count: 0
+size: 0 bytes
+in-pack: 3
+packs: 1
+size-pack: 2.09 KiB
+prune-packable: 0
+garbage: 0
+size-garbage: 0 bytes
+
+BRANCH DE ENTREGA: após adicionar implementação, antes das evidências finais.
+$ git count-objects -vH
+count: 31
+size: 12.84 KiB
+in-pack: 3
+packs: 1
+size-pack: 2.09 KiB
+prune-packable: 0
+garbage: 0
+size-garbage: 0 bytes
+
+BRANCHES REMOTAS (excluindo alias origin/HEAD):
+Total: 2
+branch | último commit UTC | inatividade aproximada em horas
+origin/feat/entrega-carparts | 2026-10-21T21:21:15.000Z | 0.05
+origin/main | 2026-10-21T21:17:12.000Z | 0.12
+
+Idade de criação de branch não é mantida pelo Git. A data acima mede tempo desde o último commit, não idade exata.
+Conflitos reais de equipe: ainda não há amostra histórica. O laboratório E5 reproduz conflito na mesma linha.
+Hipóteses do cenário, a validar no projeto real: branches longas, mudanças simultâneas em libs/ui e prompts, e alterações amplas por agentes.
+Prioridade: mudanças pequenas e integração diária; testes da biblioteca compartilhada; checkout seletivo no CI.
+Lead time de 11 dias e meta de 2 dias são dados do enunciado. Não foram medidos neste repositório.
+Checkout e duração de jobs: ver E4-medicoes.csv e E4-comparacao.md. Não foi alegado ganho industrial.
