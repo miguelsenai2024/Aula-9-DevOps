@@ -1,0 +1,644 @@
+[
+  {
+    "id": 119492990669,
+    "name": "otimizado / amostra 2",
+    "started_at": "2026-10-21T21:21:25Z",
+    "completed_at": "2026-10-21T21:21:31Z",
+    "status": "completed",
+    "conclusion": "success",
+    "html_url": "https://github.com/miguelsenai2024/Aula-9-DevOps/actions/runs/39678058336/job/119492990669",
+    "steps": [
+      {
+        "completed_at": "2026-10-21T21:21:27Z",
+        "conclusion": "success",
+        "name": "Set up job",
+        "number": 1,
+        "started_at": "2026-10-21T21:21:26Z",
+        "status": "completed"
+      },
+      {
+        "completed_at": "2026-10-21T21:21:27Z",
+        "conclusion": "success",
+        "name": "Início",
+        "number": 2,
+        "started_at": "2026-10-21T21:21:27Z",
+        "status": "completed"
+      },
+      {
+        "completed_at": "2026-10-21T21:21:27Z",
+        "conclusion": "skipped",
+        "name": "Checkout baseline",
+        "number": 3,
+        "started_at": "2026-10-21T21:21:27Z",
+        "status": "completed"
+      },
+      {
+        "completed_at": "2026-10-21T21:21:27Z",
+        "conclusion": "success",
+        "name": "Checkout otimizado",
+        "number": 4,
+        "started_at": "2026-10-21T21:21:27Z",
+        "status": "completed"
+      },
+      {
+        "completed_at": "2026-10-21T21:21:27Z",
+        "conclusion": "success",
+        "name": "Registrar checkout",
+        "number": 5,
+        "started_at": "2026-10-21T21:21:27Z",
+        "status": "completed"
+      },
+      {
+        "completed_at": "2026-10-21T21:21:28Z",
+        "conclusion": "success",
+        "name": "Run actions/setup-node@v4",
+        "number": 6,
+        "started_at": "2026-10-21T21:21:27Z",
+        "status": "completed"
+      },
+      {
+        "completed_at": "2026-10-21T21:21:29Z",
+        "conclusion": "success",
+        "name": "Run npm run check",
+        "number": 7,
+        "started_at": "2026-10-21T21:21:28Z",
+        "status": "completed"
+      },
+      {
+        "completed_at": "2026-10-21T21:21:29Z",
+        "conclusion": "success",
+        "name": "Duração da carga útil",
+        "number": 8,
+        "started_at": "2026-10-21T21:21:29Z",
+        "status": "completed"
+      },
+      {
+        "completed_at": "2026-10-21T21:21:30Z",
+        "conclusion": "success",
+        "name": "Run actions/upload-artifact@v4",
+        "number": 9,
+        "started_at": "2026-10-21T21:21:29Z",
+        "status": "completed"
+      },
+      {
+        "completed_at": "2026-10-21T21:21:30Z",
+        "conclusion": "success",
+        "name": "Post Run actions/setup-node@v4",
+        "number": 17,
+        "started_at": "2026-10-21T21:21:30Z",
+        "status": "completed"
+      },
+      {
+        "completed_at": "2026-10-21T21:21:30Z",
+        "conclusion": "success",
+        "name": "Post Checkout otimizado",
+        "number": 18,
+        "started_at": "2026-10-21T21:21:30Z",
+        "status": "completed"
+      },
+      {
+        "completed_at": "2026-10-21T21:21:30Z",
+        "conclusion": "success",
+        "name": "Complete job",
+        "number": 19,
+        "started_at": "2026-10-21T21:21:30Z",
+        "status": "completed"
+      }
+    ]
+  },
+  {
+    "id": 119492991001,
+    "name": "baseline / amostra 1",
+    "started_at": "2026-10-21T21:21:07Z",
+    "completed_at": "2026-10-21T21:21:14Z",
+    "status": "completed",
+    "conclusion": "success",
+    "html_url": "https://github.com/miguelsenai2024/Aula-9-DevOps/actions/runs/39678058336/job/119492991001",
+    "steps": [
+      {
+        "completed_at": "2026-10-21T21:21:08Z",
+        "conclusion": "success",
+        "name": "Set up job",
+        "number": 1,
+        "started_at": "2026-10-21T21:21:08Z",
+        "status": "completed"
+      },
+      {
+        "completed_at": "2026-10-21T21:21:08Z",
+        "conclusion": "success",
+        "name": "Início",
+        "number": 2,
+        "started_at": "2026-10-21T21:21:08Z",
+        "status": "completed"
+      },
+      {
+        "completed_at": "2026-10-21T21:21:09Z",
+        "conclusion": "success",
+        "name": "Checkout baseline",
+        "number": 3,
+        "started_at": "2026-10-21T21:21:08Z",
+        "status": "completed"
+      },
+      {
+        "completed_at": "2026-10-21T21:21:09Z",
+        "conclusion": "skipped",
+        "name": "Checkout otimizado",
+        "number": 4,
+        "started_at": "2026-10-21T21:21:09Z",
+        "status": "completed"
+      },
+      {
+        "completed_at": "2026-10-21T21:21:09Z",
+        "conclusion": "success",
+        "name": "Registrar checkout",
+        "number": 5,
+        "started_at": "2026-10-21T21:21:09Z",
+        "status": "completed"
+      },
+      {
+        "completed_at": "2026-10-21T21:21:09Z",
+        "conclusion": "success",
+        "name": "Run actions/setup-node@v4",
+        "number": 6,
+        "started_at": "2026-10-21T21:21:09Z",
+        "status": "completed"
+      },
+      {
+        "completed_at": "2026-10-21T21:21:10Z",
+        "conclusion": "success",
+        "name": "Run npm run check",
+        "number": 7,
+        "started_at": "2026-10-21T21:21:09Z",
+        "status": "completed"
+      },
+      {
+        "completed_at": "2026-10-21T21:21:10Z",
+        "conclusion": "success",
+        "name": "Duração da carga útil",
+        "number": 8,
+        "started_at": "2026-10-21T21:21:10Z",
+        "status": "completed"
+      },
+      {
+        "completed_at": "2026-10-21T21:21:11Z",
+        "conclusion": "success",
+        "name": "Run actions/upload-artifact@v4",
+        "number": 9,
+        "started_at": "2026-10-21T21:21:10Z",
+        "status": "completed"
+      },
+      {
+        "completed_at": "2026-10-21T21:21:11Z",
+        "conclusion": "success",
+        "name": "Post Run actions/setup-node@v4",
+        "number": 17,
+        "started_at": "2026-10-21T21:21:11Z",
+        "status": "completed"
+      },
+      {
+        "completed_at": "2026-10-21T21:21:11Z",
+        "conclusion": "success",
+        "name": "Post Checkout baseline",
+        "number": 18,
+        "started_at": "2026-10-21T21:21:11Z",
+        "status": "completed"
+      },
+      {
+        "completed_at": "2026-10-21T21:21:11Z",
+        "conclusion": "success",
+        "name": "Complete job",
+        "number": 19,
+        "started_at": "2026-10-21T21:21:11Z",
+        "status": "completed"
+      }
+    ]
+  },
+  {
+    "id": 119492991005,
+    "name": "baseline / amostra 2",
+    "started_at": "2026-10-21T21:21:07Z",
+    "completed_at": "2026-10-21T21:21:13Z",
+    "status": "completed",
+    "conclusion": "success",
+    "html_url": "https://github.com/miguelsenai2024/Aula-9-DevOps/actions/runs/39678058336/job/119492991005",
+    "steps": [
+      {
+        "completed_at": "2026-10-21T21:21:08Z",
+        "conclusion": "success",
+        "name": "Set up job",
+        "number": 1,
+        "started_at": "2026-10-21T21:21:07Z",
+        "status": "completed"
+      },
+      {
+        "completed_at": "2026-10-21T21:21:08Z",
+        "conclusion": "success",
+        "name": "Início",
+        "number": 2,
+        "started_at": "2026-10-21T21:21:08Z",
+        "status": "completed"
+      },
+      {
+        "completed_at": "2026-10-21T21:21:09Z",
+        "conclusion": "success",
+        "name": "Checkout baseline",
+        "number": 3,
+        "started_at": "2026-10-21T21:21:08Z",
+        "status": "completed"
+      },
+      {
+        "completed_at": "2026-10-21T21:21:09Z",
+        "conclusion": "skipped",
+        "name": "Checkout otimizado",
+        "number": 4,
+        "started_at": "2026-10-21T21:21:09Z",
+        "status": "completed"
+      },
+      {
+        "completed_at": "2026-10-21T21:21:09Z",
+        "conclusion": "success",
+        "name": "Registrar checkout",
+        "number": 5,
+        "started_at": "2026-10-21T21:21:09Z",
+        "status": "completed"
+      },
+      {
+        "completed_at": "2026-10-21T21:21:09Z",
+        "conclusion": "success",
+        "name": "Run actions/setup-node@v4",
+        "number": 6,
+        "started_at": "2026-10-21T21:21:09Z",
+        "status": "completed"
+      },
+      {
+        "completed_at": "2026-10-21T21:21:10Z",
+        "conclusion": "success",
+        "name": "Run npm run check",
+        "number": 7,
+        "started_at": "2026-10-21T21:21:09Z",
+        "status": "completed"
+      },
+      {
+        "completed_at": "2026-10-21T21:21:10Z",
+        "conclusion": "success",
+        "name": "Duração da carga útil",
+        "number": 8,
+        "started_at": "2026-10-21T21:21:10Z",
+        "status": "completed"
+      },
+      {
+        "completed_at": "2026-10-21T21:21:11Z",
+        "conclusion": "success",
+        "name": "Run actions/upload-artifact@v4",
+        "number": 9,
+        "started_at": "2026-10-21T21:21:10Z",
+        "status": "completed"
+      },
+      {
+        "completed_at": "2026-10-21T21:21:11Z",
+        "conclusion": "success",
+        "name": "Post Run actions/setup-node@v4",
+        "number": 17,
+        "started_at": "2026-10-21T21:21:11Z",
+        "status": "completed"
+      },
+      {
+        "completed_at": "2026-10-21T21:21:11Z",
+        "conclusion": "success",
+        "name": "Post Checkout baseline",
+        "number": 18,
+        "started_at": "2026-10-21T21:21:11Z",
+        "status": "completed"
+      },
+      {
+        "completed_at": "2026-10-21T21:21:11Z",
+        "conclusion": "success",
+        "name": "Complete job",
+        "number": 19,
+        "started_at": "2026-10-21T21:21:11Z",
+        "status": "completed"
+      }
+    ]
+  },
+  {
+    "id": 119492991016,
+    "name": "otimizado / amostra 3",
+    "started_at": "2026-10-21T21:21:26Z",
+    "completed_at": "2026-10-21T21:21:34Z",
+    "status": "completed",
+    "conclusion": "success",
+    "html_url": "https://github.com/miguelsenai2024/Aula-9-DevOps/actions/runs/39678058336/job/119492991016",
+    "steps": [
+      {
+        "completed_at": "2026-10-21T21:21:28Z",
+        "conclusion": "success",
+        "name": "Set up job",
+        "number": 1,
+        "started_at": "2026-10-21T21:21:27Z",
+        "status": "completed"
+      },
+      {
+        "completed_at": "2026-10-21T21:21:28Z",
+        "conclusion": "success",
+        "name": "Início",
+        "number": 2,
+        "started_at": "2026-10-21T21:21:28Z",
+        "status": "completed"
+      },
+      {
+        "completed_at": "2026-10-21T21:21:28Z",
+        "conclusion": "skipped",
+        "name": "Checkout baseline",
+        "number": 3,
+        "started_at": "2026-10-21T21:21:28Z",
+        "status": "completed"
+      },
+      {
+        "completed_at": "2026-10-21T21:21:29Z",
+        "conclusion": "success",
+        "name": "Checkout otimizado",
+        "number": 4,
+        "started_at": "2026-10-21T21:21:28Z",
+        "status": "completed"
+      },
+      {
+        "completed_at": "2026-10-21T21:21:29Z",
+        "conclusion": "success",
+        "name": "Registrar checkout",
+        "number": 5,
+        "started_at": "2026-10-21T21:21:29Z",
+        "status": "completed"
+      },
+      {
+        "completed_at": "2026-10-21T21:21:30Z",
+        "conclusion": "success",
+        "name": "Run actions/setup-node@v4",
+        "number": 6,
+        "started_at": "2026-10-21T21:21:29Z",
+        "status": "completed"
+      },
+      {
+        "completed_at": "2026-10-21T21:21:30Z",
+        "conclusion": "success",
+        "name": "Run npm run check",
+        "number": 7,
+        "started_at": "2026-10-21T21:21:30Z",
+        "status": "completed"
+      },
+      {
+        "completed_at": "2026-10-21T21:21:30Z",
+        "conclusion": "success",
+        "name": "Duração da carga útil",
+        "number": 8,
+        "started_at": "2026-10-21T21:21:30Z",
+        "status": "completed"
+      },
+      {
+        "completed_at": "2026-10-21T21:21:31Z",
+        "conclusion": "success",
+        "name": "Run actions/upload-artifact@v4",
+        "number": 9,
+        "started_at": "2026-10-21T21:21:30Z",
+        "status": "completed"
+      },
+      {
+        "completed_at": "2026-10-21T21:21:31Z",
+        "conclusion": "success",
+        "name": "Post Run actions/setup-node@v4",
+        "number": 17,
+        "started_at": "2026-10-21T21:21:31Z",
+        "status": "completed"
+      },
+      {
+        "completed_at": "2026-10-21T21:21:32Z",
+        "conclusion": "success",
+        "name": "Post Checkout otimizado",
+        "number": 18,
+        "started_at": "2026-10-21T21:21:31Z",
+        "status": "completed"
+      },
+      {
+        "completed_at": "2026-10-21T21:21:32Z",
+        "conclusion": "success",
+        "name": "Complete job",
+        "number": 19,
+        "started_at": "2026-10-21T21:21:32Z",
+        "status": "completed"
+      }
+    ]
+  },
+  {
+    "id": 119492991030,
+    "name": "baseline / amostra 3",
+    "started_at": "2026-10-21T21:21:16Z",
+    "completed_at": "2026-10-21T21:21:23Z",
+    "status": "completed",
+    "conclusion": "success",
+    "html_url": "https://github.com/miguelsenai2024/Aula-9-DevOps/actions/runs/39678058336/job/119492991030",
+    "steps": [
+      {
+        "completed_at": "2026-10-21T21:21:17Z",
+        "conclusion": "success",
+        "name": "Set up job",
+        "number": 1,
+        "started_at": "2026-10-21T21:21:16Z",
+        "status": "completed"
+      },
+      {
+        "completed_at": "2026-10-21T21:21:17Z",
+        "conclusion": "success",
+        "name": "Início",
+        "number": 2,
+        "started_at": "2026-10-21T21:21:17Z",
+        "status": "completed"
+      },
+      {
+        "completed_at": "2026-10-21T21:21:19Z",
+        "conclusion": "success",
+        "name": "Checkout baseline",
+        "number": 3,
+        "started_at": "2026-10-21T21:21:17Z",
+        "status": "completed"
+      },
+      {
+        "completed_at": "2026-10-21T21:21:19Z",
+        "conclusion": "skipped",
+        "name": "Checkout otimizado",
+        "number": 4,
+        "started_at": "2026-10-21T21:21:19Z",
+        "status": "completed"
+      },
+      {
+        "completed_at": "2026-10-21T21:21:19Z",
+        "conclusion": "success",
+        "name": "Registrar checkout",
+        "number": 5,
+        "started_at": "2026-10-21T21:21:19Z",
+        "status": "completed"
+      },
+      {
+        "completed_at": "2026-10-21T21:21:20Z",
+        "conclusion": "success",
+        "name": "Run actions/setup-node@v4",
+        "number": 6,
+        "started_at": "2026-10-21T21:21:19Z",
+        "status": "completed"
+      },
+      {
+        "completed_at": "2026-10-21T21:21:20Z",
+        "conclusion": "success",
+        "name": "Run npm run check",
+        "number": 7,
+        "started_at": "2026-10-21T21:21:20Z",
+        "status": "completed"
+      },
+      {
+        "completed_at": "2026-10-21T21:21:20Z",
+        "conclusion": "success",
+        "name": "Duração da carga útil",
+        "number": 8,
+        "started_at": "2026-10-21T21:21:20Z",
+        "status": "completed"
+      },
+      {
+        "completed_at": "2026-10-21T21:21:21Z",
+        "conclusion": "success",
+        "name": "Run actions/upload-artifact@v4",
+        "number": 9,
+        "started_at": "2026-10-21T21:21:20Z",
+        "status": "completed"
+      },
+      {
+        "completed_at": "2026-10-21T21:21:21Z",
+        "conclusion": "success",
+        "name": "Post Run actions/setup-node@v4",
+        "number": 17,
+        "started_at": "2026-10-21T21:21:21Z",
+        "status": "completed"
+      },
+      {
+        "completed_at": "2026-10-21T21:21:22Z",
+        "conclusion": "success",
+        "name": "Post Checkout baseline",
+        "number": 18,
+        "started_at": "2026-10-21T21:21:21Z",
+        "status": "completed"
+      },
+      {
+        "completed_at": "2026-10-21T21:21:22Z",
+        "conclusion": "success",
+        "name": "Complete job",
+        "number": 19,
+        "started_at": "2026-10-21T21:21:22Z",
+        "status": "completed"
+      }
+    ]
+  },
+  {
+    "id": 119492991101,
+    "name": "otimizado / amostra 1",
+    "started_at": "2026-10-21T21:21:16Z",
+    "completed_at": "2026-10-21T21:21:23Z",
+    "status": "completed",
+    "conclusion": "success",
+    "html_url": "https://github.com/miguelsenai2024/Aula-9-DevOps/actions/runs/39678058336/job/119492991101",
+    "steps": [
+      {
+        "completed_at": "2026-10-21T21:21:18Z",
+        "conclusion": "success",
+        "name": "Set up job",
+        "number": 1,
+        "started_at": "2026-10-21T21:21:17Z",
+        "status": "completed"
+      },
+      {
+        "completed_at": "2026-10-21T21:21:18Z",
+        "conclusion": "success",
+        "name": "Início",
+        "number": 2,
+        "started_at": "2026-10-21T21:21:18Z",
+        "status": "completed"
+      },
+      {
+        "completed_at": "2026-10-21T21:21:18Z",
+        "conclusion": "skipped",
+        "name": "Checkout baseline",
+        "number": 3,
+        "started_at": "2026-10-21T21:21:18Z",
+        "status": "completed"
+      },
+      {
+        "completed_at": "2026-10-21T21:21:18Z",
+        "conclusion": "success",
+        "name": "Checkout otimizado",
+        "number": 4,
+        "started_at": "2026-10-21T21:21:18Z",
+        "status": "completed"
+      },
+      {
+        "completed_at": "2026-10-21T21:21:18Z",
+        "conclusion": "success",
+        "name": "Registrar checkout",
+        "number": 5,
+        "started_at": "2026-10-21T21:21:18Z",
+        "status": "completed"
+      },
+      {
+        "completed_at": "2026-10-21T21:21:19Z",
+        "conclusion": "success",
+        "name": "Run actions/setup-node@v4",
+        "number": 6,
+        "started_at": "2026-10-21T21:21:18Z",
+        "status": "completed"
+      },
+      {
+        "completed_at": "2026-10-21T21:21:20Z",
+        "conclusion": "success",
+        "name": "Run npm run check",
+        "number": 7,
+        "started_at": "2026-10-21T21:21:19Z",
+        "status": "completed"
+      },
+      {
+        "completed_at": "2026-10-21T21:21:20Z",
+        "conclusion": "success",
+        "name": "Duração da carga útil",
+        "number": 8,
+        "started_at": "2026-10-21T21:21:20Z",
+        "status": "completed"
+      },
+      {
+        "completed_at": "2026-10-21T21:21:20Z",
+        "conclusion": "success",
+        "name": "Run actions/upload-artifact@v4",
+        "number": 9,
+        "started_at": "2026-10-21T21:21:20Z",
+        "status": "completed"
+      },
+      {
+        "completed_at": "2026-10-21T21:21:21Z",
+        "conclusion": "success",
+        "name": "Post Run actions/setup-node@v4",
+        "number": 17,
+        "started_at": "2026-10-21T21:21:20Z",
+        "status": "completed"
+      },
+      {
+        "completed_at": "2026-10-21T21:21:21Z",
+        "conclusion": "success",
+        "name": "Post Checkout otimizado",
+        "number": 18,
+        "started_at": "2026-10-21T21:21:21Z",
+        "status": "completed"
+      },
+      {
+        "completed_at": "2026-10-21T21:21:21Z",
+        "conclusion": "success",
+        "name": "Complete job",
+        "number": 19,
+        "started_at": "2026-10-21T21:21:21Z",
+        "status": "completed"
+      }
+    ]
+  }
+]

@@ -1,0 +1,7 @@
+modo,amostra,checkout_ms,job_s,commit,run,url
+baseline,1,768,7,55bde3e4327ca49d6eeaf5185503bcb373b46efe,39678058336,https://github.com/miguelsenai2024/Aula-9-DevOps/actions/runs/39678058336/job/119492991001
+baseline,2,673,6,55bde3e4327ca49d6eeaf5185503bcb373b46efe,39678058336,https://github.com/miguelsenai2024/Aula-9-DevOps/actions/runs/39678058336/job/119492991005
+baseline,3,1731,7,55bde3e4327ca49d6eeaf5185503bcb373b46efe,39678058336,https://github.com/miguelsenai2024/Aula-9-DevOps/actions/runs/39678058336/job/119492991030
+otimizado,1,780,7,55bde3e4327ca49d6eeaf5185503bcb373b46efe,39678058336,https://github.com/miguelsenai2024/Aula-9-DevOps/actions/runs/39678058336/job/119492991101
+otimizado,2,809,6,55bde3e4327ca49d6eeaf5185503bcb373b46efe,39678058336,https://github.com/miguelsenai2024/Aula-9-DevOps/actions/runs/39678058336/job/119492990669
+otimizado,3,1256,8,55bde3e4327ca49d6eeaf5185503bcb373b46efe,39678058336,https://github.com/miguelsenai2024/Aula-9-DevOps/actions/runs/39678058336/job/119492991016
